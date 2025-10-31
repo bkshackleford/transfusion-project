@@ -1,0 +1,20 @@
+﻿{
+  "resourceType": "ValueSet",
+  "id": "blood-products-vs",
+  "url": "http://example.org/fhir/ValueSet/blood-products-vs",
+  "version": "0.1.1",
+  "name": "BloodProductsVS",
+  "title": "Blood Products ValueSet",
+  "status": "active",
+  "compose": {
+    "include": [{
+      "system": "http://snomed.info/sct",
+      "concept": [
+        { "code": "30004009",  "display": "Red blood cells, blood product" },
+        { "code": "126261006", "display": "Human platelets, pooled (product)" },
+        { "code": "346447007", "display": "Fresh frozen plasma (product)" },
+        { "code": "256401009", "display": "Cryoprecipitate (product)" }
+      ]
+    }]
+  }
+}

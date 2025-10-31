@@ -1,0 +1,37 @@
+﻿{
+  "resourceType": "ConceptMap",
+  "id": "local-to-snomed-blood-products",
+  "url": "http://example.org/fhir/ConceptMap/local-to-snomed-blood-products",
+  "version": "0.1.0",
+  "name": "LocalToSNOMEDBloodProducts",
+  "title": "Local Code to SNOMED Blood Product Map",
+  "status": "active",
+  "sourceUri": "http://example.org/local-codes",
+  "targetUri": "http://snomed.info/sct",
+  "group": [{
+    "source": "http://example.org/local-codes",
+    "target": "http://snomed.info/sct",
+    "element": [
+      {
+        "code": "RBC",
+        "display": "Red Blood Cells",
+        "target": [{ "code": "30004009", "display": "Red blood cells, blood product", "equivalence": "equivalent" }]
+      },
+      {
+        "code": "PLT",
+        "display": "Platelets",
+        "target": [{ "code": "126261006", "display": "Human platelets, pooled (product)", "equivalence": "equivalent" }]
+      },
+      {
+        "code": "FFP",
+        "display": "Fresh Frozen Plasma",
+        "target": [{ "code": "346447007", "display": "Fresh frozen plasma (product)", "equivalence": "equivalent" }]
+      },
+      {
+        "code": "CRYO",
+        "display": "Cryoprecipitate",
+        "target": [{ "code": "256401009", "display": "Cryoprecipitate (product)", "equivalence": "equivalent" }]
+      }
+    ]
+  }]
+}
