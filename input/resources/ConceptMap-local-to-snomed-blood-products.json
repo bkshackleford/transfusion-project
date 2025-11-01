@@ -1,4 +1,4 @@
-﻿{
+{
   "resourceType": "ConceptMap",
   "id": "local-to-snomed-blood-products",
   "url": "http://example.org/fhir/ConceptMap/local-to-snomed-blood-products",
