@@ -1,0 +1,96 @@
+# Transfusion Project – FHIR ValueSets + ConceptMap
+
+Author: **Bonnie Shackelford  
+Medical Laboratory Scientist • MBA • MSHIM Candidate**
+
+This repository defines structured transfusion-related terminology assets using **FHIR R4**:
+- ✅ **Blood Products ValueSet**
+- ✅ **Local → SNOMED ConceptMap**
+- ✅ Example IG skeleton (`ExampleIG/`)
+
+These artifacts are intended to support interoperability between:
+- LIS (Laboratory Information Systems)
+- EHR platforms
+- Clinical transfusion workflows
+
+Use cases include:
+- Order entry decision support
+- Normalization of local codes
+- Downstream analytics + dashboards
+- OR blood planning
+
+---
+
+## 📁 Repository Structure
+
+transfusion-project/
+├─ ExampleIG/
+│ ├─ sushi-config.yaml
+│ ├─ input/
+│ │ ├─ fsh/ # FSH sources (optional)
+│ │ └─ resources/ # JSON canonical artifacts
+│ │ ├─ ValueSet-blood-products-vs.json
+│ │ └─ ConceptMap-local-to-snomed-blood-products.json
+│ │
+│ └─ fsh-generated/ # SUSHI output
+│
+└─ README.md
+
+---
+
+## 🔬 Terminology Assets
+
+### ✅ **ValueSet: Blood Products**
+File:
+ExampleIG/input/resources/ValueSet-blood-products-vs.json
+
+Includes SNOMED concepts:
+| Code       | Display                              |
+|------------|--------------------------------------|
+| 30004009   | Red blood cells, blood product       |
+| 126261006  | Human platelets, pooled (product)    |
+| 346447007  | Fresh frozen plasma (product)        |
+| 256401009  | Cryoprecipitate (product)            |
+
+URL:
+http://example.org/fhir/ValueSet/blood-products-vs
+
+
+---
+
+### ✅ **ConceptMap: Local → SNOMED Blood Products**
+File:
+ExampleIG/input/resources/ConceptMap-local-to-snomed-blood-products.json
+
+| Local | SNOMED     | Display                           |
+|-------|------------|-----------------------------------|
+| RBC   | 30004009   | Red blood cells, blood product    |
+| PLT   | 126261006  | Human platelets, pooled           |
+| FFP   | 346447007  | Fresh frozen plasma               |
+| CRYO  | 256401009  | Cryoprecipitate                   |
+
+URL:
+http://example.org/fhir/ConceptMap/local-to-snomed-blood-products
+
+---
+
+## 🛠 Tooling
+
+| Tool | Purpose |
+|------|---------|
+| SUSHI | Compile FSH → FHIR JSON |
+| HAPI FHIR | Test terminology artifacts |
+| GitHub | Version & collaboration |
+
+---
+
+## ▶ Build IG with SUSHI
+
+From:
+ExampleIG/
+
+Run:
+```bash
+sushi .
+Output appears under:
+ExampleIG/fsh-generated/resources/
